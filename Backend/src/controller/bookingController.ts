@@ -38,4 +38,9 @@ const bookBus = async (req: Request, res: Response) => {
   }
 };
 
-export default { bookBus };
+const getBookings = async (req: Request, res: Response) => {
+  const Bookings = await bookingModel.find({});
+  res.status(200).json(Bookings);
+};
+
+export default { bookBus, getBookings };

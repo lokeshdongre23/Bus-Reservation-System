@@ -5,7 +5,7 @@ const getBuses = async (req: Request, res: Response) => {
   try {
     const buses = await Bus.find({});
     res.status(200).json(buses);
-    console.log("bus Controller called", buses);
+    console.log("bus Controller called");
   } catch (error) {
     console.log("Eroor Encounted:", error);
   }
@@ -21,6 +21,7 @@ const regBus = async (req: Request, res: Response) => {
       totalSeat: body.totalSeat,
       source: body.source,
       destination: body.destination,
+      fair: body.fair,
     });
     res.status(200).json({
       status: 200,
